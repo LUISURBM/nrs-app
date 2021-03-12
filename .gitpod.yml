@@ -1,0 +1,19 @@
+image:
+  file: Dockerfile.gitpod
+
+# exposed ports
+ports:
+- port: 8080
+  onOpen: open-preview
+
+- port: 3306
+  onOpen: ignore
+
+# start up tasks
+tasks:
+- name: MySQL
+  command: >
+      mysqld
+- init: mvn package -DskipTests
+  command: java -jar target/*.jar
+    

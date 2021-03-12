@@ -1,0 +1,13 @@
+FROM gitpod/workspace-mysql
+
+ENV x=2
+
+
+RUN sudo apt-get update \
+ && sudo apt-get install -y \
+    tool \
+ && sudo rm -rf /var/lib/apt/lists/*
+ 
+MAINTAINER github.com/LUISURBM
+COPY target/nrs-app-2.1.0.BUILD-SNAPSHOT.jar nrs-app.jar
+ENTRYPOINT ["java","-jar","/nrs-app.jar"]
