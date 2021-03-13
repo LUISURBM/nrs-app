@@ -8,7 +8,7 @@ CREATE TABLE vehiculos (
   correo    VARCHAR(2000),
   marca    VARCHAR(2000),
   tpoCombustible    VARCHAR(2000),
-  vmax    NUMBER(5),
+  vmax    DECIMAL(10,5),
   tpoTransmision    VARCHAR(2000)
 
 );
